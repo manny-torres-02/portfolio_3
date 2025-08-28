@@ -40,6 +40,21 @@
   opacity: 0.8;
 }
 
+.headshot {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  //TODO: resize image. to shift upwards and center my head
+  @media (min-width: 760px) {
+    width: 400px;
+    height: 400px;
+  }
+}
+
 .hero-actions {
   display: flex;
   gap: 1rem;
@@ -63,7 +78,7 @@
   background: rgba(255, 255, 255, 0.2);
   color: white;
   border-color: rgba(255, 255, 255, 0.3);
-  
+
   &:hover {
     background: rgba(255, 255, 255, 0.3);
     transform: translateY(-2px);
@@ -75,7 +90,7 @@
   background: transparent;
   color: white;
   border-color: rgba(255, 255, 255, 0.5);
-  
+
   &:hover {
     background: rgba(255, 255, 255, 0.1);
     transform: translateY(-2px);
@@ -98,20 +113,20 @@
   .hero-title {
     font-size: 2.5rem;
   }
-  
+
   .hero-subtitle {
     font-size: 1.2rem;
   }
-  
+
   .hero-description {
     font-size: 1rem;
   }
-  
+
   .hero-actions {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .btn {
     width: 100%;
     max-width: 250px;
