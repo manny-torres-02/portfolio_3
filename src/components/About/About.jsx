@@ -2,12 +2,38 @@ import "./About.scss";
 
 const About = () => {
   const skills = [
-    { name: "JavaScript", level: 90 },
-    { name: "React", level: 85 },
-    { name: "Node.js", level: 80 },
-    { name: "CSS/SCSS", level: 85 },
-    { name: "MongoDB", level: 75 },
-    { name: "Git", level: 85 }
+    {
+      name: "JavaScript",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
+    },
+    {
+      name: "React",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
+    },
+    {
+      name: "Angular",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angular/angular-original.svg",
+    },
+    {
+      name: "Node.js",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
+    },
+    {
+      name: "CSS/SCSS",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg",
+    },
+    {
+      name: "MongoDB",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg",
+    },
+    {
+      name: "AWS",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg",
+    },
+    {
+      name: "Git",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg",
+    },
   ];
 
   return (
@@ -17,30 +43,25 @@ const About = () => {
           <div className="about-text">
             <h2 className="section-title">About Me</h2>
             <p className="about-description">
-              I'm a passionate full-stack developer with 3+ years of experience creating 
-              web applications that solve real-world problems. I love working with modern 
-              technologies and am always eager to learn new skills.
+              I'm a passionate full-stack developer with 3+ years of experience
+              creating web applications that solve real-world problems. I love
+              working with modern technologies and am always eager to learn new
+              skills.
             </p>
             <p className="about-description">
-              When I'm not coding, you can find me exploring new technologies, 
+              When I'm not coding, you can find me exploring new technologies,
               contributing to open source projects, or enjoying a good book.
             </p>
           </div>
           <div className="about-skills">
             <h3 className="skills-title">Technical Skills</h3>
-            <div className="skills-list">
-              {skills.map(skill => (
+            <div className="skills-grid">
+              {skills.map((skill) => (
                 <div key={skill.name} className="skill-item">
-                  <div className="skill-header">
-                    <span className="skill-name">{skill.name}</span>
-                    <span className="skill-percentage">{skill.level}%</span>
+                  <div className="skill-icon">
+                    <img src={skill.icon} alt={skill.name} />
                   </div>
-                  <div className="skill-bar">
-                    <div 
-                      className="skill-progress" 
-                      style={{width: `${skill.level}%`}}
-                    ></div>
-                  </div>
+                  <span className="skill-name">{skill.name}</span>
                 </div>
               ))}
             </div>

@@ -1,22 +1,17 @@
 import "./App.css";
+import { Routes, Route } from "react-router-dom";
 import Navigation from "./components/Nav/Navigation";
-import Hero from "./components/Hero/Hero";
-import About from "./components/About/About";
-import Projects from "./components/Projects/Projects";
-import Contact from "./components/Contact/Contact";
+import Home from "./pages/Home";
+import CoolCSS from "./pages/Cool-CSS";
 
 function App() {
   return (
     <>
       <Navigation />
-      <main>
-        <section id="home">
-          <Hero />
-        </section>
-        <About />
-        <Projects />
-        <Contact />
-      </main>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/cool-css" element={<CoolCSS />} />
+      </Routes>
     </>
   );
 }

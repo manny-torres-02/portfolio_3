@@ -42,52 +42,50 @@
   color: #2c3e50;
 }
 
-.skills-list {
-  display: flex;
-  flex-direction: column;
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 1.5rem;
+  margin-top: 1rem;
 }
 
 .skill-item {
-  .skill-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, #667eea10 0%, #764ba210 100%);
   }
-  
+
+  .skill-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
   .skill-name {
     font-family: "Inconsolata", monospace;
     font-weight: 500;
     color: #2c3e50;
-  }
-  
-  .skill-percentage {
-    font-family: "Inconsolata", monospace;
+    text-align: center;
     font-size: 0.9rem;
-    color: #667eea;
-    font-weight: 600;
-  }
-}
-
-.skill-bar {
-  height: 8px;
-  background-color: #e9ecef;
-  border-radius: 4px;
-  overflow: hidden;
-}
-
-.skill-progress {
-  height: 100%;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border-radius: 4px;
-  transition: width 2s ease-in-out;
-  animation: progressAnimation 2s ease-in-out;
-}
-
-@keyframes progressAnimation {
-  from {
-    width: 0%;
   }
 }
 
@@ -96,19 +94,37 @@
     grid-template-columns: 1fr;
     gap: 2rem;
   }
-  
+
   .section-title {
     font-size: 2rem;
   }
-  
+
   .about-description {
     font-size: 1rem;
   }
-  
+
   .skills-title {
     font-size: 1.5rem;
   }
-  
+
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 1rem;
+  }
+
+  .skill-item {
+    padding: 1rem;
+
+    .skill-icon {
+      width: 40px;
+      height: 40px;
+    }
+
+    .skill-name {
+      font-size: 0.8rem;
+    }
+  }
+
   .container {
     padding: 0 1rem;
   }
