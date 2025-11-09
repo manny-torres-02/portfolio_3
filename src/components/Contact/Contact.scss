@@ -1,4 +1,4 @@
-@import "../../partials/font-family";
+@use "../../partials/font-family";
 
 .contact {
   padding: 5rem 0;
@@ -58,7 +58,7 @@
   color: #667eea;
   text-decoration: none;
   transition: color 0.3s ease;
-  
+
   &:hover {
     color: #5a6fd8;
   }
@@ -77,7 +77,7 @@
 
 .form-group {
   margin-bottom: 1.5rem;
-  
+
   label {
     display: block;
     font-family: "Inconsolata", monospace;
@@ -85,8 +85,9 @@
     color: #2c3e50;
     margin-bottom: 0.5rem;
   }
-  
-  input, textarea {
+
+  input,
+  textarea {
     width: 100%;
     padding: 0.8rem;
     border: 2px solid #e9ecef;
@@ -94,13 +95,13 @@
     font-family: "Inconsolata", monospace;
     font-size: 1rem;
     transition: border-color 0.3s ease;
-    
+
     &:focus {
       outline: none;
       border-color: #667eea;
     }
   }
-  
+
   textarea {
     resize: vertical;
     min-height: 120px;
@@ -119,7 +120,7 @@
   font-weight: 500;
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  
+
   &:hover {
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
@@ -131,23 +132,23 @@
     grid-template-columns: 1fr;
     gap: 2rem;
   }
-  
+
   .section-title {
     font-size: 2rem;
   }
-  
+
   .contact-subtitle {
     font-size: 1.5rem;
   }
-  
+
   .contact-description {
     font-size: 1rem;
   }
-  
+
   .contact-form {
     padding: 1.5rem;
   }
-  
+
   .container {
     padding: 0 1rem;
   }

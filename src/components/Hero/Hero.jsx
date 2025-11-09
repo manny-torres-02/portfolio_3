@@ -5,7 +5,11 @@ const Hero = () => {
     <section className="hero">
       <div className="hero-content">
         <h1 className="hero-title">Manuel Torres</h1>
-        <img src="src/assets/headshot.jpeg" alt="headshot of manuel torres" class="headshot" />
+        <img
+          src="src/assets/headshot_10Pxborder.png"
+          alt="headshot of manuel torres"
+          class="headshot"
+        />
         <p className="hero-subtitle">Full Stack Developer</p>
         <p className="hero-description">
           Creating beautiful and functional web experiences with modern
