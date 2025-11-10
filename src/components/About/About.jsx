@@ -34,6 +34,10 @@ const About = () => {
       name: "Git",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg",
     },
+    {
+      name: "TypeScript",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
+    },
   ];
 
   return (
@@ -42,16 +46,47 @@ const About = () => {
         <div className="about-content">
           <div className="about-text">
             <h2 className="section-title">About Me</h2>
-            <p className="about-description">
-              I'm a passionate full-stack developer with 3+ years of experience
-              creating web applications that solve real-world problems. I love
-              working with modern technologies and am always eager to learn new
-              skills.
+            <p>
+              <span role="img" aria-label="light bulb">
+                💡
+              </span>{" "}
+              I’m a developer and cloud consultant who cares just as much about
+              how things feel as how they work. I started in consulting, where I
+              learned that building software is really about listening,
+              understanding people, and shaping solutions together, not just
+              writing code.
             </p>
-            <p className="about-description">
-              When I'm not coding, you can find me exploring new technologies,
-              contributing to open source projects, or enjoying a good book.
+            <br />
+
+            <p>
+              <span role="img" aria-label="computer">
+                🖥️
+              </span>
+              I love turning designs, sketches, and ideas into clean, thoughtful
+              experiences. Whether it’s translating a Photoshop mockup into a
+              polished interface or architecting the cloud systems behind it, I
+              focus on clarity, reliability, and usability. Good software should
+              feel intuitive and grounded, something you can trust and want to
+              return to.
             </p>
+            <br />
+
+            <p>
+              <span role="img" aria-label="handshake">
+                🤝
+              </span>{" "}
+              I thrive when I’m helping others bring ideas to life. Individuals,
+              small businesses, early teams, anyone with a vision. I enjoy
+              connecting with people, understanding what matters to them, and
+              building with care. My work is guided by empathy, curiosity, and
+              the belief that technology should support real human experience.
+            </p>
+            <br />
+
+            <p className="pt-2 font-medium">
+              If you’re building something meaningful, I’d love to help.
+            </p>
+            <br />
           </div>
           <div className="about-skills">
             <h3 className="skills-title">Technical Skills</h3>

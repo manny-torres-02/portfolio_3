@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import nameLogo from "../../assets/name.svg";
 import "./Navigation.scss";
 
 const Navigation = () => {
@@ -26,7 +27,14 @@ const Navigation = () => {
     <nav className="navigation">
       <div className="nav-container">
         <div className="nav-logo">
-          <Link to="/">MT</Link>
+          <Link to="/">
+            <img
+              src={nameLogo}
+              xmlns="http://www.w3.org/2000/svg"
+              alt="Manuel Torres logo"
+              className="nav-logo-img"
+            />
+          </Link>
         </div>
 
         <div className={`nav-menu ${isMenuOpen ? "active" : ""}`}>

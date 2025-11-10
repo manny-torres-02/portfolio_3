@@ -10,3 +10,22 @@ Currently, two official plugins are available:
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+
+# Personal Notes 
+## About me 
+### Primary Portfolio Introduction
+
+I’m Manny, a freelance developer and cloud consultant. I build clean, thoughtful front-end experiences from design files or brand concepts, and I support them with reliable cloud architecture behind the scenes. I’ve worked across consulting, product teams, and community projects, and I love helping people bring ideas to life. Whether you’re an individual, a small business, or a growing startup, I’m here to help you create something that feels good to use and works the way it should.
+
+⸻
+
+### Slightly Bolder (For homepage hero section)
+
+Hi — I’m Manny. I design and build polished digital experiences, from front-end interfaces to cloud architecture. I work with anyone who has an idea worth making real. If you’re looking to craft something genuine, functional, and well-made — I’d love to help.
+
+⸻
+
+### More Warm & Human (About page variant)
+
+I love connecting with people and solving problems alongside them. Over the years, I’ve worked in consulting, product development, and cloud infrastructure — all of which shaped how I think about building things with care. My work is about clarity, usability, and creating experiences that feel intuitive and enjoyable.
