@@ -127,6 +127,19 @@
   }
 }
 
+.form-status {
+  margin: 0.5rem 0 1rem;
+  font-family: "Inconsolata", monospace;
+  font-size: 0.95rem;
+
+  &.success {
+    color: #2e7d32; /* green */
+  }
+  &.error {
+    color: #c62828; /* red */
+  }
+}
+
 @media (max-width: 768px) {
   .contact-content {
     grid-template-columns: 1fr;

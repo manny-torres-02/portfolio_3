@@ -3,24 +3,71 @@ import "./Contact.scss";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [status, setStatus] = useState({
+    loading: false,
+    success: null,
+    error: null,
   });
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-    // Reset form
-    setFormData({ name: '', email: '', message: '' });
+    setStatus({ loading: true, success: null, error: null });
+
+    // Option 1: Formspree endpoint via env var (no backend required)
+    const formspreeId = import.meta.env.VITE_FORMSPREE_ID; // e.g., "abcdwxyz"
+    const formspreeUrl = formspreeId
+      ? `https://formspree.io/f/${formspreeId}`
+      : import.meta.env.VITE_FORMSPREE_URL; // alternatively set full URL
+
+    if (!formspreeUrl) {
+      setStatus({
+        loading: false,
+        success: null,
+        error:
+          "No contact endpoint configured. Set VITE_FORMSPREE_ID (or VITE_FORMSPREE_URL) in .env.local.",
+      });
+      return;
+    }
+
+    try {
+      const res = await fetch(formspreeUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data?.error || `Request failed: ${res.status}`);
+      }
+
+      setStatus({
+        loading: false,
+        success: "Message sent! Thanks for reaching out.",
+        error: null,
+      });
+      setFormData({ name: "", email: "", message: "" });
+    } catch (err) {
+      setStatus({
+        loading: false,
+        success: null,
+        error: err.message || "Something went wrong.",
+      });
+    }
   };
 
   return (
@@ -31,25 +78,40 @@ const Contact = () => {
           <div className="contact-info">
             <h3 className="contact-subtitle">Let's Connect</h3>
             <p className="contact-description">
-              I'm always open to discussing new opportunities, 
-              interesting projects, or just having a chat about technology.
+              I'm always open to discussing new opportunities, interesting
+              projects, or just having a chat about technology.
             </p>
             <div className="contact-links">
               <a href="mailto:manuel@example.com" className="contact-link">
                 <span className="contact-icon">📧</span>
-                manuel@example.com
+                manueljosetorres02@gmail.com
               </a>
-              <a href="https://linkedin.com/in/manuel-torres" className="contact-link" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://www.linkedin.com/in/jmanueltorres/"
+                className="contact-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <span className="contact-icon">💼</span>
                 LinkedIn
               </a>
-              <a href="https://github.com/manuel-torres" className="contact-link" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://github.com/manny-torres-02"
+                className="contact-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <span className="contact-icon">🐙</span>
                 GitHub
               </a>
             </div>
           </div>
-          <form className="contact-form" onSubmit={handleSubmit}>
+          <form
+            className="contact-form"
+            action="https://formspree.io/f/xldarvwb"
+            method="post"
+            onSubmit={handleSubmit}
+          >
             <div className="form-group">
               <label htmlFor="name">Name</label>
               <input
@@ -83,7 +145,19 @@ const Contact = () => {
                 required
               ></textarea>
             </div>
-            <button type="submit" className="submit-btn">Send Message</button>
+            {status.error && (
+              <p className="form-status error">{status.error}</p>
+            )}
+            {status.success && (
+              <p className="form-status success">{status.success}</p>
+            )}
+            <button
+              type="submit"
+              className="submit-btn"
+              disabled={status.loading}
+            >
+              {status.loading ? "Sending…" : "Send Message"}
+            </button>
           </form>
         </div>
       </div>

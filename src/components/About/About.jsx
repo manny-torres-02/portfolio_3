@@ -74,7 +74,7 @@ const About = () => {
             <p>
               <span role="img" aria-label="handshake">
                 🤝
-              </span>{" "}
+              </span>
               I thrive when I’m helping others bring ideas to life. Individuals,
               small businesses, early teams, anyone with a vision. I enjoy
               connecting with people, understanding what matters to them, and

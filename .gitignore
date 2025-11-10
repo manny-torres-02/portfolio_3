@@ -25,3 +25,7 @@ dist-ssr
 
 *CLAUDE.md
 .gitignore
+
+.env
+.env.example
+.env.local
