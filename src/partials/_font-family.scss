@@ -1,8 +1,8 @@
 // Spectral for Headings and such
 @font-face {
   font-family: spectral;
-  src: url("/src/fonts/spectral/Spectral-Regular.ttf");
-  // font-weight: 400;
+  src: url("/src/fonts/Spectral/Spectral-Regular.ttf");
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -15,10 +15,24 @@
 
 @font-face {
   font-family: spectral;
-  src: url("/src/fonts/spectral/Spectral-Regular.ttf");
-  // font-weight: 400;
-  font-style: normal;
+  src: url("/src/fonts/spectral/Spectral-Italic.ttf");
+  font-weight: 400;
+  font-style: italic;
 }
 
 //inconsolata for Standard Texts
+@font-face {
+  font-family: "Inconsolata";
+  src: url("/src/fonts/Inconsolata/Inconsolata-VariableFont_wdth,wght.ttf")
+    format("truetype");
+  font-weight: 400 900;
+  font-style: normal;
+}
 
+@font-face {
+  font-family: "Inconsolata";
+  src: url("/src/fonts/Inconsolata/Inconsolata-VariableFont_wdth,wght.ttf")
+    format("truetype");
+  font-weight: 400 900;
+  font-style: italic;
+}

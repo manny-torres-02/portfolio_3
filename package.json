@@ -3,6 +3,9 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "engines": {
+    "node": ">=24.0.0"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -10,8 +13,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "dotenv": "^17.2.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-router-dom": "^7.9.3",
     "sass": "^1.89.2"
   },
   "devDependencies": {
